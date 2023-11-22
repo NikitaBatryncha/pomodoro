@@ -1,0 +1,30 @@
+.ContentList {
+  padding-left: 23px;
+}
+
+.ContentListItem {
+  display: block;
+  position: relative;
+  font-size: 1.115em;
+  font-weight: 400;
+  line-height: 33px;
+}
+
+.ListItemDist {
+  display: block;
+  top: 15px;
+  left: -22px;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: var(--redB7);
+  border-radius: 100%;
+}
+
+.ContentTitle {
+  margin: 0;
+  margin-bottom: 3px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33px;
+}

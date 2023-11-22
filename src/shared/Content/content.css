@@ -1,0 +1,14 @@
+.ContentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.LeftContainer {
+  width: 531px;
+}
+
+.RightContainer {
+  width: 733px;
+  height: 507px;
+  background-color: var(--grayF4);
+}

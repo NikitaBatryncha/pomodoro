@@ -1,0 +1,45 @@
+.Form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.FormInput {
+  padding: 0 15px;
+  padding-top: 19px;
+  margin-bottom: 25px;
+  background-color: var(--grayF4);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 17px;
+  width: 370px;
+  height: 55px;
+  resize: none;
+}
+
+.FormInput::placeholder {
+  color: #999;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.FormSubmit {
+  display: flex;
+  width: 173px;
+  height: 55px;
+  padding: 15px 50px;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--green);
+  color: var(--white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+}
+
+.FormSubmit:hover, .FormSubmit:focus, .FormSubmit:active {
+  background-color: var(--green89);
+}

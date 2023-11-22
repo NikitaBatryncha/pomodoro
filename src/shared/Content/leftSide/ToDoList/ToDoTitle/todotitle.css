@@ -1,0 +1,16 @@
+h2 {
+  margin: 0;
+}
+
+.TitleContainer {
+  width: 370px;
+  padding: 19px 0;
+  border-top: 1px solid var(--grayE4);
+}
+
+.Title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 17px;
+}

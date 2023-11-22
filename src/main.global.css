@@ -1,0 +1,81 @@
+@import url('https://fonts.cdnfonts.com/css/sf-ui-display');
+
+:root {
+  --black: #333;
+  --red: #DC3E22;
+  --redB7: #B7280F;
+  --green: #A8B64F;
+  --green89: #899441;
+  --white: #FFF;
+  --whiteFD: #FDFDFD;
+  --grayF4: #F4F4F4;
+  --grayC4: #C4C4C4;
+  --gray99: #999;
+  --grayE4: #e4e4e4;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'SF UI Display', sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+* {
+  color: var(--black);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'SF UI Display', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, select, textarea {
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'SF UI Display';
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.MainContainer {
+  margin: 0 auto;
+  padding: 0 80px;
+  width: 1440px;
+  height: auto;
+}
+
+@media all and (min-width: 1540px) {
+  body::-webkit-scrollbar {
+    width: 7px;
+    height: 341px;
+    border-radius: 30px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,97 @@
+.Timer {
+  font-size: 16px;
+  line-height: 17px;
+}
+
+.buttonWrapper {
+  margin: 0 auto;
+  display: flex;
+  width: 308px;
+  justify-content: space-between;
+}
+
+.StartButton {
+  display: inline-block;
+  width: 145px;
+  height: 55px;
+  padding: 15px 50px;
+  background-color: var(--green);
+  align-items: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  color: var(--whiteFD);
+}
+
+.StartButton:hover, .StartButton:focus, .StartButton:active {
+  background-color: var(--green89);
+}
+
+.StopButton {
+  display: inline-block;
+  width: 138px;
+  height: 55px;
+  padding: 15px 0;
+  align-items: center;
+  border: 2px solid var(--grayC4);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  color: var(--grayC4);
+}
+
+.StopButton:hover, .StopButton:focus {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.StopButton:active {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.TimerCount {
+  position: relative;
+  margin-bottom: 41px;
+  font-size: 150px;
+  width: 100%;
+  height: 179px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  text-align: center;
+}
+
+.TimerButton  {
+  position: absolute;
+  transform: translateY(-47%);
+  top: 50%;
+  right: 102px;
+}
+
+.TimerButtonStyles {
+  fill: var(--grayC4);
+}
+
+.TimerButton:hover .TimerButtonStyles, .TimerButton:focus .TimerButtonStyles, .TimerButton:active  .TimerButtonStyles {
+  fill: var(--green89);
+}
+
+.TaskWrapper {
+  display: flex;
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.105em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.TaskNumber {
+  color: var(--gray99);
+  padding-right: 5px;
+}

@@ -1,0 +1,18 @@
+.ToDoListContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.ToDoList {
+  width: 370px;
+  margin-top: 25px;
+  border-bottom: 1px solid var(--grayE4);
+}
+
+.TimeSummary {
+  padding-top: 19px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 17px;
+  color: var(--gray99);
+}
