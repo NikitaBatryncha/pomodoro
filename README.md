@@ -16,11 +16,9 @@
   <li>Перейдите в папку backend в вашем терминале</li>
   <li>
     Выполните команду
-    <pre>
       <code>
         npm run start
       </code>
-    </pre>
   </li>
   <li>Всё</li>
 </ol>
