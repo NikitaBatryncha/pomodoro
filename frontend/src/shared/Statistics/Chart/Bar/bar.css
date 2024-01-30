@@ -1,0 +1,12 @@
+.BarWrapper {
+  display: flex;
+  align-items: center;
+  padding: 11px 23px;
+  width: 77px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--gray99);
+  text-align: center;
+}
+

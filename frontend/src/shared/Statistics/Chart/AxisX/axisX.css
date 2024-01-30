@@ -1,0 +1,7 @@
+.axisX {
+  padding-left: 56px;
+  display: flex;
+  gap: 32px;
+  height: 51px;
+  background-color: #ECECEC;
+}

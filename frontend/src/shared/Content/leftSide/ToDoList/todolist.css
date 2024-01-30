@@ -1,0 +1,28 @@
+.ToDoListContainer {
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ToDoList {
+  width: 370px;
+  margin-top: 25px;
+  border-bottom: 1px solid var(--grayE4);
+  height: 120px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: 0;
+  -ms-overflow-style: none;
+}
+
+.ToDoList::-webkit-scrollbar {
+  width: 0px;
+}
+
+.TimeSummary {
+  padding-top: 19px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 17px;
+  color: var(--gray99);
+}

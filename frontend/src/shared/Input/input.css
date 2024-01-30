@@ -1,0 +1,17 @@
+.Input {
+  display: block;
+  width: 370px;
+  height: 55px;
+  padding: 0 15px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background-color: var(--grayF4);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 17px;
+  color: var(--black);
+  border: none;
+  outline: none;
+  cursor: text;
+}
