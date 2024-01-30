@@ -16,7 +16,7 @@
   <li>Перейдите в папку backend в вашем терминале</li>
   <li>
     Выполните команду
-    <pre style="width:120px; height: 10px!important;">
+    <pre style="width:120px; height: 10px;">
       <code>
         npm run start
       </code>
