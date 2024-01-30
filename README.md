@@ -16,9 +16,11 @@
   <li>Перейдите в папку backend в вашем терминале</li>
   <li>
     Выполните команду
-      <code style="display:block; width:120px; height: 10px;">
+    <pre>
+      <code>
         npm run start
       </code>
+    </pre>
   </li>
   <li>Всё</li>
 </ol>
