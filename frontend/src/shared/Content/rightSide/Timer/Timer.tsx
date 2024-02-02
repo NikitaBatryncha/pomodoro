@@ -2,96 +2,31 @@ import React, { useEffect, useState } from 'react';
 import styles from './timer.css';
 import { ToDoTask } from '../ToDoContainer/ToDoTask';
 import { useSelector } from 'react-redux';
+import { useTimerLogic } from '../timerLogic';
 
 export function Timer() {
-  const [initialMinutes, setInitialMinutes] = useState(0.25);
-  const [initialWorkTime, setInitialWorkTime] = useState(initialMinutes * 60);
-  const [initialPauseTime, setInitialPauseTime] = useState(0.25 * 60);
-  const [seconds, setSeconds] = useState(initialWorkTime);
-  const [isActive, setIsActive] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [timerToggle, setTimerToggle] = useState('work');
-  const [id, setId] = useState('');
+  const initialMinutes = 15000;
+  const initialPauseMinutes = 5000;
   const buttonData = useSelector((state: any) => state.data);
+  const [id, setId] = useState('');
 
   useEffect(() => {
-    setId(buttonData.id);
-  }, [buttonData]);
+    setId(buttonData.id)
+  }, [buttonData])
 
-  useEffect(() => {
-    setInitialWorkTime(initialMinutes * 60);
-    setSeconds(initialMinutes * 60);
-  }, [initialMinutes]);
-
-  useEffect(() => {
-    if (isActive) {
-      const intervalId = setInterval(() => {
-        setSeconds((prevSeconds) => prevSeconds - 1);
-      }, 1000);
-
-      return () => clearInterval(intervalId);
-    }
-  }, [isActive]);
-
-  useEffect(() => {
-    if (seconds === 0 && timerToggle === 'work') {
-      setIsActive(false);
-      setIsCompleted(true);
-
-      setTimeout(() => {
-        setTimerToggle('pause');
-        setSeconds(initialPauseTime);
-        setIsCompleted(false);
-        setIsActive(true);
-      }, 3000)
-    } else if (seconds === 0 && timerToggle === 'pause') {
-      setIsActive(false);
-      setTimeout(() => {
-      setIsCompleted(true);
-        setTimeout(() => {
-          setTimerToggle('work');
-          setSeconds(initialWorkTime);
-          setIsCompleted(false);
-          setIsActive(true);
-        }, 3000)
-      }, 4000)
-    }
-  }, [seconds, timerToggle, initialPauseTime, initialWorkTime]);
-
-  function plusMinutes() {
-    requestAnimationFrame(() => {
-      setInitialMinutes((prevMinutes) => prevMinutes + 1);
-      const newInitialMinutes = initialMinutes + 1;
-      setInitialWorkTime(newInitialMinutes * 60);
-      setSeconds(newInitialMinutes * 60);
-    });
-  }
-
-  function handlePlusMinutesClick() {
-    plusMinutes();
-  }
-
-  const toggleTimer = () => {
-    setIsActive(!isActive);
-  };
-
-  const resetTimer = () => {
-    setIsActive(false);
-    setIsCompleted(false);
-    setSeconds(initialWorkTime);
-  };
-
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const remainingSeconds = time % 60;
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
-  };
+  const {
+    formatTime,
+    countDown,
+    handlePlusMinutesClick,
+    toggleTimer,
+    isActive
+  } = useTimerLogic(initialMinutes, initialPauseMinutes);
 
   return (
     <div className={styles.Timer}>
       <div className={styles.TimerCountContainer}>
         <div className={styles.TimerCount}>
-          {formatTime(seconds)}
+          {isNaN(countDown) ? "00:00":formatTime(Math.ceil(countDown / 1000))}
           <button className={styles.TimerButton} onClick={handlePlusMinutesClick}>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
               <circle cx="25" cy="25" r="25" fill="#C4C4C4"/>
@@ -107,11 +42,11 @@ export function Timer() {
         </div>
         <div className={styles.buttonWrapper}>
           <button className={styles.StartButton} onClick={toggleTimer}>
-            {isActive ? 'Пауза' : 'Старт'}
+            {!isActive ? 'Старт' : 'Пауза'}
           </button>
-          <button className={styles.StopButton} onClick={resetTimer}>
+          {/* <button className={styles.StopButton} onClick={stopTimer}>
             Стоп
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

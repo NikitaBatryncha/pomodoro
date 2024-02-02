@@ -3,7 +3,6 @@ import styles from './statistics.css';
 import { Chart } from './Chart';
 import { useData } from '../../context/dataContext';
 
-
 export function Statistics() {
   const { userData } = useData();
 
@@ -57,6 +56,7 @@ export function Statistics() {
             </div>
           </div>
           <div className={styles.StatisticsChart}>
+            {/* <Chart/> */}
           </div>
         </div>
         <div className={styles.StatisticsGrid}>

@@ -4,6 +4,7 @@ import { Legend } from './Legend';
 import { AxisX } from './AxisX';
 import { useData } from '../../../context/dataContext';
 
+
 interface IValue {
   id: number,
   time: number,
@@ -11,7 +12,7 @@ interface IValue {
 }
 
 export function Chart() {
-  
+
   return (
     <div className={styles.Chart}>
       <Legend />
