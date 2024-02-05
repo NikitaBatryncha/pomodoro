@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './timer.css';
 import { ToDoTask } from '../ToDoContainer/ToDoTask';
 import { useSelector } from 'react-redux';
@@ -44,11 +44,12 @@ export function Timer() {
           <button className={styles.StartButton} onClick={toggleTimer}>
             {!isActive ? 'Старт' : 'Пауза'}
           </button>
-          {/* <button className={styles.StopButton} onClick={stopTimer}>
+          <button className={styles.StopButton} onClick={()=> {console.log('hello')}}>
             Стоп
-          </button> */}
+          </button>
         </div>
       </div>
     </div>
   );
 }
+

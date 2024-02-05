@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from 'react';
-import { Formik, Form, Field } from 'formik';
+// import { Formik, Form, Field } from 'formik';
 import styles from './todoform.css';
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { makeAutoObservable } from 'mobx';
 import { observer } from 'mobx-react-lite';
-import { createDir, getFiles } from '../../../../actions/file';
+import { createDir } from '../../../../actions/file';
 
-export class form {
+export class FormModel {
   value = '';
 
   constructor() {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
 
   updateValue(newValue: string) {
@@ -18,47 +18,45 @@ export class form {
   }
 }
 
-class store {
+class Store {
   item = {
-    value: String
-  }
+    value: String,
+  };
 }
 
-export const myStore = new form;
+export const myStore = new FormModel();
 
 export const ToDoForm = observer(() => {
-  const dispatch = useDispatch()
+  const dispatch: (dispatch: any) => Promise<void> = useDispatch();
   const ref = useRef<HTMLDivElement>(null);
-  const currentDir = useSelector((state:any) => state.files.currentDir)
-
+  const currentDir = useSelector((state: any) => state.files.currentDir);
 
   function createHandler(dir: string, name: string) {
-    dispatch(createDir(dir, name) as any);
+    dispatch(createDir(dir, name));
   }
 
   return (
     <div ref={ref}>
-      <Formik
+      {/* <Formik
         initialValues={{
-          text: myStore.value
+          text: myStore.value,
         }}
         onSubmit={async (values) => {
           myStore.updateValue(values.text);
-          createHandler(currentDir, myStore.value)
+          createHandler(currentDir, myStore.value);
         }}
       >
-        <Form className={styles.Form}>
-          <Field
-            as='textarea'
-            name='text'
-            className={styles.FormInput}
-            placeholder={"Название задачи"}
-          />
-          <button type="submit" className={styles.FormSubmit}>
+        <Form className={styles.Form} placeholder="Enter a task description">
+        <Field
+          as='textarea'
+          name='text'
+          className={styles.FormInput}
+        />
+          <button type='submit' className={styles.FormSubmit}>
             Добавить
           </button>
         </Form>
-      </Formik>
+      </Formik> */}
     </div>
   );
-})
+});

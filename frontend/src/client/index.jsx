@@ -1,16 +1,13 @@
-import * as React from 'react'
-import * as ReactDom from 'react-dom'
+import * as React from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { App } from '../shared/App';
 import { Provider } from 'react-redux';
-import { store } from '../reducers'
-import reportWebVitals from "../reportWebVitals";
+import { store } from '../reducers';
 
-window.addEventListener('load', () => {
-  ReactDom.hydrate(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  , document.getElementById("react_root"));
-})
+const root = hydrateRoot(document.getElementById('react_root'));
 
-reportWebVitals();
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);

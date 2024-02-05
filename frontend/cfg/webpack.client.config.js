@@ -17,7 +17,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: {
-      "react-dom": IS_DEV ? "@hot-loader/react-dom" : "react-dom",
+      "react-dom": IS_DEV ? "react-dom/client" : "react-dom",
     },
   },
   mode: NODE_ENV ? NODE_ENV : "development",
@@ -28,7 +28,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../dist/client"),
     filename: "client.js",
-    publicPath: "//localhost:3001/static",
+    publicPath: "//localhost:3001/static/",
   },
   module: {
     rules: [

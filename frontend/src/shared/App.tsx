@@ -1,17 +1,17 @@
+import { hot } from "react-hot-loader";
 import React, { useEffect, useState } from "react";
 import * as styles from "../main.global.css"
 import { MemoryRouter as BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import { Header } from "./Header";
-import { hot } from "react-hot-loader/root";
 import { Content } from "./Content";
 import { Registration } from "./Registration";
 import { Login } from "./Login";
 import { Statistics } from "./Statistics";
-import { Provider, useDispatch, useSelector } from "react-redux";
 import {store} from "../reducers/index"
 import { registration, auth } from "../actions/user";
 import { Placeholder } from "./Placeholder";
 import { DataProvider } from "../context/dataContext";
+import { Provider, useDispatch, useSelector } from "react-redux";
 
 function AppComponent() {
   const isAuth = useSelector((state: any) => state.user.isAuth);
@@ -66,10 +66,8 @@ function AppComponent() {
   )
 }
 
-export const App = hot(
-  () =>
-    <Provider store={store} >
-      <AppComponent />
-    </Provider>
-  );
-
+export const App = hot(module)(
+  () => <Provider store={store}>
+    <AppComponent />
+  </Provider>
+);
